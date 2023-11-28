@@ -1,4 +1,5 @@
 SOURCE_DIRECTORY := $(dir $(realpath $(lastword $(MAKEFILE_LIST))))
+PROJECT_FOLDER := $(SOURCE_DIRECTORY)/SourceGenRegressionTests
 CONFIGURATION := Release
 GENERATED_FOLDER := generated
 
@@ -7,16 +8,16 @@ clean:
 	rm -rf $(GENERATED_FOLDER)
 
 build: clean
-	cd $(SOURCE_DIRECTORY)Net60 ; dotnet build -c $(CONFIGURATION)
-	cd $(SOURCE_DIRECTORY)Net70 ; dotnet build -c $(CONFIGURATION)
+	dotnet build -c $(CONFIGURATION)
 
 copy-files: build
 	mkdir -p $(SOURCE_DIRECTORY)$(GENERATED_FOLDER)/Net60
-	cp -R Net60/*.cs $(SOURCE_DIRECTORY)$(GENERATED_FOLDER)/Net60
-	cp -R $(SOURCE_DIRECTORY)Net60/obj/$(CONFIGURATION)/net6.0/generated/System.Text.Json.SourceGeneration/System.Text.Json.SourceGeneration.JsonSourceGenerator/*.cs $(SOURCE_DIRECTORY)$(GENERATED_FOLDER)/Net60
+	cp -R $(PROJECT_FOLDER)/obj/$(CONFIGURATION)/net6.0/generated/System.Text.Json.SourceGeneration/System.Text.Json.SourceGeneration.JsonSourceGenerator/*.cs $(SOURCE_DIRECTORY)$(GENERATED_FOLDER)/Net60
 
 	mkdir -p $(SOURCE_DIRECTORY)$(GENERATED_FOLDER)/Net70
-	cp -R Net70/*.cs $(SOURCE_DIRECTORY)$(GENERATED_FOLDER)/Net70
-	cp -R $(SOURCE_DIRECTORY)Net70/obj/$(CONFIGURATION)/net7.0/generated/System.Text.Json.SourceGeneration/System.Text.Json.SourceGeneration.JsonSourceGenerator/*.cs $(SOURCE_DIRECTORY)$(GENERATED_FOLDER)/Net70
+	cp -R $(PROJECT_FOLDER)/obj/$(CONFIGURATION)/net7.0/generated/System.Text.Json.SourceGeneration/System.Text.Json.SourceGeneration.JsonSourceGenerator/*.cs $(SOURCE_DIRECTORY)$(GENERATED_FOLDER)/Net70
+
+	mkdir -p $(SOURCE_DIRECTORY)$(GENERATED_FOLDER)/Net80
+	cp -R $(PROJECT_FOLDER)/obj/$(CONFIGURATION)/net8.0/generated/System.Text.Json.SourceGeneration/System.Text.Json.SourceGeneration.JsonSourceGenerator/*.cs $(SOURCE_DIRECTORY)$(GENERATED_FOLDER)/Net80
 
 .DEFAULT_GOAL := copy-files

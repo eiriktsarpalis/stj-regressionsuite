@@ -1,12 +1,26 @@
 ﻿using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
+#if NET6_0
 namespace System.Text.Json.Tests.SourceGenRegressionTests.Net60
+#elif NET7_0
+namespace System.Text.Json.Tests.SourceGenRegressionTests.Net70
+#elif NET8_0
+namespace System.Text.Json.Tests.SourceGenRegressionTests.Net80
+#else
+#error Target framework needs to be updated
+#endif
 {
     [JsonSerializable(typeof(WeatherForecastWithPOCOs))]
     [JsonSerializable(typeof(ClassWithCustomConverter))]
     [JsonSerializable(typeof(MyLinkedList))]
-    public partial class Net60GeneratedContext : JsonSerializerContext { }
+#if NET6_0
+    public partial class Net60GeneratedContext : JsonSerializerContext {}
+#elif NET7_0
+    public partial class Net70GeneratedContext : JsonSerializerContext {}
+#elif NET8_0
+    public partial class Net80GeneratedContext : JsonSerializerContext {}
+#endif
 
     public class WeatherForecastWithPOCOs
     {

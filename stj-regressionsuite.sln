@@ -1,12 +1,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27428.2002
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34310.174
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Net60", "Net60\Net60.csproj", "{BE9E8CA5-6A9B-4223-9865-86ECE0086678}" 
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SourceGenRegressionTests", "SourceGenRegressionTests\SourceGenRegressionTests.csproj", "{CDE9859A-078B-495E-BDB3-BE65E051DA53}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Net70", "Net70\Net70.csproj", "{CDE9859A-078B-495E-BDB3-BE65E051DA53}" 
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{793811F6-D65B-40EA-96CE-1493541FF52B}" 
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{793811F6-D65B-40EA-96CE-1493541FF52B}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 		LICENSE = LICENSE
@@ -21,10 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BE9E8CA5-6A9B-4223-9865-86ECE0086678}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BE9E8CA5-6A9B-4223-9865-86ECE0086678}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BE9E8CA5-6A9B-4223-9865-86ECE0086678}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BE9E8CA5-6A9B-4223-9865-86ECE0086678}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CDE9859A-078B-495E-BDB3-BE65E051DA53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CDE9859A-078B-495E-BDB3-BE65E051DA53}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDE9859A-078B-495E-BDB3-BE65E051DA53}.Release|Any CPU.ActiveCfg = Release|Any CPU
