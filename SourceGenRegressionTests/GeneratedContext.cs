@@ -7,6 +7,8 @@ namespace System.Text.Json.Tests.SourceGenRegressionTests.Net60
 namespace System.Text.Json.Tests.SourceGenRegressionTests.Net70
 #elif NET8_0
 namespace System.Text.Json.Tests.SourceGenRegressionTests.Net80
+#elif NET9_0
+namespace System.Text.Json.Tests.SourceGenRegressionTests.Net90
 #else
 #error Target framework needs to be updated
 #endif
@@ -20,6 +22,8 @@ namespace System.Text.Json.Tests.SourceGenRegressionTests.Net80
     public partial class Net70GeneratedContext : JsonSerializerContext {}
 #elif NET8_0
     public partial class Net80GeneratedContext : JsonSerializerContext {}
+#elif NET9_0
+    public partial class Net90GeneratedContext : JsonSerializerContext {}
 #endif
 
     public class WeatherForecastWithPOCOs
